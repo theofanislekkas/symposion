@@ -29,4 +29,4 @@ admin.site.register(ProposalKind,
 
 
 admin.site.register(ProposalSection)
-admin.site.register(ProposalKind)
+# admin.site.register(ProposalKind)
