@@ -4,7 +4,7 @@ from django.contrib import admin
 from symposion.proposals.models import ProposalSection, ProposalKind
 
 
-admin.site.register(Proposal,
+admin.site.register(ProposalKind,
     list_display = [
         "id",
         "title",
