@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# from symposion.proposals.actions import export_as_csv_action
+from symposion.proposals.actions import export_as_csv_action
 from symposion.proposals.models import ProposalSection, ProposalKind
 
 
