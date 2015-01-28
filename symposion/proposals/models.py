@@ -11,8 +11,6 @@ from django.contrib.auth.models import User
 
 import reversion
 
-from markitup.fields import MarkupField
-
 from model_utils.managers import InheritanceManager
 
 from symposion.conference.models import Section
@@ -87,18 +85,14 @@ class ProposalBase(models.Model):
         help_text=_("If your proposal is accepted this will be made public and printed in the "
                     "program. Should be one paragraph, maximum 400 characters.")
     )
-    abstract = MarkupField(
+    abstract = models.TextField(
         _("Detailed Abstract"),
-        help_text=_("Detailed outline. Will be made public if your proposal is accepted. Edit "
-                    "using <a href='http://daringfireball.net/projects/markdown/basics' "
-                    "target='_blank'>Markdown</a>.")
+        help_text=_("Detailed outline. Will be made public if your proposal is accepted.")
     )
-    additional_notes = MarkupField(
+    additional_notes = models.TextField(
         blank=True,
         help_text=_("Anything else you'd like the program committee to know when making their "
-                    "selection: your past experience, etc. This is not made public. Edit using "
-                    "<a href='http://daringfireball.net/projects/markdown/basics' "
-                    "target='_blank'>Markdown</a>.")
+                    "selection: your past experience, etc. This is not made public.")
     )
     submitted = models.DateTimeField(
         default=now,
